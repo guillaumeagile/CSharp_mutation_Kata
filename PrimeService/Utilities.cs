@@ -71,12 +71,13 @@ namespace PrimeService
             return number >= 0;
         }
         
-        public static int[] CalculateFibonacci(int maxValue = 100, int[] sequence = default)
+        public static int[] CalculateFibonacci(int maxValue = 0, int[] sequence = default)
         {
             if ((sequence ??= new[] { 0, 1, 1 })[^1] == maxValue)
                 return sequence;
 
             var newValue = sequence[^1] + sequence[^2];
+            //                          ^-- essaye de faire la mutation à la main pour comprendre le timeout
             return newValue > maxValue ? sequence : CalculateFibonacci(maxValue, sequence.Concat(new[] { newValue }).ToArray());
         }
     }
