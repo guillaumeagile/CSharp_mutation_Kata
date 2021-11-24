@@ -9,8 +9,8 @@ namespace PrimeService.Tests
         [Fact]
         public void TestSum()
         {
-            var actual = Utilities.Sum(1, 2);
-            Assert.Equal(3, actual);
+            var actual = Utilities.Sum(1, 0);
+            Assert.Equal(1, actual);
         }
     }
 }
